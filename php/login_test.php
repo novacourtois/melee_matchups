@@ -2,6 +2,7 @@
 
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
+
 print("<p>in it</p>");
 
 // retrieve user input
@@ -11,44 +12,36 @@ $pass = (isset($_POST["pass"])) ? $_POST["pass"] : "";
 // get salts
 $emailSalt = "";
 $passSalt = "";
-
-$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
+$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
 if($con->connect_errno)
 {
-	$msg = "Failed to establish MySQL connection... Error message:\n" . $con->connect_error;
-	printErrMsg($msg);
+	printErrMsg($con->connect_error);
 	return;
 }
-
 $query = $con->prepare("SELECT * FROM ADMIN WHERE property='email_salt' OR property='pw_salt';");
 if(!$query)
 {
-	$msg = "Failed to prepare query... Error message:\n" . $con->error;
-	printErrMsg($msg);
+	printErrMsg($con->error);
 	return;
 }
 if(!$query->execute())
 {
-	$msg = "Failed to execute query... Error message:\n" . $query->error;
-	printErrMsg($msg);
+	printErrMsg($query->error);
 	return;
 }
 if(!$query->bind_result($property, $value))
 {
-	$msg = "Failed to bind query result... Error message:\n" . $query->error;
-	printErrMsg($msg);
+	printErrMsg($query->error);
 	return;
 }
 switch($query->fetch())
 {
 	case false:
-		$msg = "Failed to fetch result... Error message:\n" . $query->error;
-		printErrMsg($msg);
+		printErrMsg($query->error);
 		return;
 		break;
 	case null:
-		$msg = "Error: no results returned when result was expected...";
-		printErrMsg($msg);
+		printErrMsg("No results returned by query when result was expected.");
 		return;
 		break;
 }
@@ -62,20 +55,17 @@ elseif($property === "pw_salt")
 }
 else
 {
-	$msg = "Unexpected results were returned by the query... Can not continue...\n";
-	printErrMsg($msg);
+	printErrMsg("Unexpected results returned by query, can not continue.");
 	return;
 }
 switch($query->fetch())
 {
 	case false:
-		$msg = "Failed to fetch result... Error message:\n" . $query->error;
-		printErrMsg($msg);
+		printErrMsg($query->error);
 		return;
 		break;
 	case null:
-		$msg = "Error: no results returned when result was expected...";
-		printErrMsg($msg);
+		printErrMsg("No results returned by query when result was expected.");
 		return;
 		break;
 }
@@ -89,26 +79,24 @@ elseif($property === "pw_salt")
 }
 else
 {
-	$msg = "Unexpected results were returned by the query... Can not continue...\n";
-	printErrMsg($msg);
+	printErrMsg("Unexpcted results returned by query, can not continue.");
 	return;
 }
 $query->free_result();
 if(!$query->close())
 {
-	$msg = "Failed to close query... Error message:\n" . $query->error;
-	printErrMsg($msg);
+	printErrMsg($query->error);
 	return;
 }
 if(!$con->close())
 {
-	$msg = "Failed to close connection... Error message:\n" . $con->error;
-	printErrMsg($msg);
+	printErrMsg($con->error);
 	return;
 }
+print("<p>email salt: " . htmlspecialchars($emailSalt) . " & password salt: " . htmlspecialchars($passSalt) . "</p>");
 
 // validate credentials
-print("<p>$email & $pass</p>");
+print("<p>email: $email & password: $pass</p>");
 $validEmail = validateEmail($email, $emailSalt);
 if($validEmail)
 {
@@ -117,9 +105,8 @@ if($validEmail)
 else
 {
 	print("<p>bad email</p>");
-	return;
 }
-$validPass = validatePassword($email, $emailSalt, $pass, $passSalt);
+$validPass = $validEmail && validatePassword($email, $emailSalt, $pass, $passSalt);
 if($validPass)
 {
 	print("<p>good password</p>");
@@ -127,9 +114,12 @@ if($validPass)
 else
 {
 	print("<p>bad password</p>");
-	return;
 }
-print("<p>good credentials</p>");
+if($validEmail && $validPass)
+{
+	print("<p>good credentials</p>");
+	// what now?
+}
 
 function validateEmail($email, $emailSalt)
 {
@@ -140,63 +130,64 @@ function validateEmail($email, $emailSalt)
 		// confirm that email is in database
 		// should login credentials be saved in a different file?
 		$emailHash = hash("sha512", $emailSalt . $email);
-		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
+		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
 		if($con->connect_errno)
 		{
-			$msg = "Failed to establish MySQL connection... Error message:\n" . $con->connect_error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($con->connect_error);
+			return false;
 		}
 		$query = $con->prepare("SELECT COUNT(*) FROM USERS WHERE emailHash=?;");
 		if(!$query)
 		{
-			$msg = "Failed to prepare query... Error message:\n" . $con->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($con->error);
+			return false;
 		}
 		if(!$query->bind_param("s", $emailHash))
 		{
-			$msg = "Failed to bind query parameters... Error message:\n" . $query->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($query->error);
+			return false;
 		}
 		if(!$query->execute())
 		{
-			$msg = "Failed to execute query... Error messages:\n" . $query->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($query->error);
+			return false;
 		}
 		if(!$query->bind_result($count))
 		{
-			$msg = "Failed to bind query result... Error message:\n" . $query->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($query->error);
+			return false;
+		}
+		if(!$query->execute())
+		{
+			printErrMsg($query->error);
+			return false;
+		}
+		if(!$query->bind_result($count))
+		{
+			printErrMsg($query->error);
+			return false;
 		}
 		switch($query->fetch())
 		{
 			case false:
-				$msg = "Failed to fetch result... Error message:\n" . $query->error;
-				printErrMsg($msg);
-				return;
+				printErrMsg($query->error);
+				return false;
 				break;
 			case null:
-				$msg = "Error: no results returned when result was expected...";
-				printErrMsg($msg);
-				return;
+				printErrMsg("No results returned by query when result was expected.");
+				return false;
 				break;
 		}
 		$query->free_result();
 		if(!$query->close())
 		{
-			$msg = "Failed to close query... Error message:\n" . $query->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($query->error);
+			return false;
 		}
 		if(!$con->close())
 		{
-			$msg = "Failed to close connection... Error message:\n" . $con->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($con->error);
+			return false;
 		}
 		return $count === 1;
 	}
@@ -234,63 +225,59 @@ function validatePassword($email, $emailSalt, $pass, $passSalt)
 		// confirm that password matches validated email in database
 		$emailHash = hash("sha512", $emailSalt . $email);
 		$passHash = hash("sha512", $passSalt . $pass);
-		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
+		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
 		if($con->connect_errno)
 		{
-			$msg = "Failed to establish MySQL connection... Error message:\n" . $con->connect_error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($con->connect_error);
+			return false;
 		}
 		$query = $con->prepare("SELECT COUNT(*) FROM USERS WHERE emailHash=? AND pwHash=?;");
 		if(!$query)
 		{
-			$msg = "Failed to prepare query... Error message:\n" . $con->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($con->error);
+			return false;
 		}
-		if(!$query->bind_param("ss", $emailHash, $passHash))
+		if(!$query->bind_param("ss", $emailHash, $passHash) && !$query->execute())
 		{
-			$msg = "Failed to bind query parameters... Error message:\n" . $query->error;
-			printErrMsg($msg);
-			return;
-		}
-		if(!$query->execute())
-		{
-			$msg = "Failed to execute query... Error messages:\n" . $query->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($query->error);
+			return false;
 		}
 		if(!$query->bind_result($count))
 		{
-			$msg = "Failed to bind query result... Error message:\n" . $query->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($query->error);
+			return false;
+		}
+		if(!$query->execute())
+		{
+			printErrMsg($query->error);
+			return false;
+		}
+		if(!$query->bind_result($count))
+		{
+			printErrMsg($query->error);
+			return false;
 		}
 		switch($query->fetch())
 		{
 			case false:
-				$msg = "Failed to fetch result... Error message:\n" . $query->error;
-				printErrMsg($msg);
-				return;
+				printErrMsg($query->error);
+				return false;
 				break;
 			case null:
-				$msg = "Error: no results returned when result was expected...";
-				printErrMsg($msg);
-				return;
+				printErrMsg("No results returned by query when result was expected.");
+				return false;
 				break;
 		}
 		$query->free_result();
 		if(!$query->close())
 		{
-			$msg = "Failed to close query... Error message:\n" . $query->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($query->error);
+			return false;
 		}
 		if(!$con->close())
 		{
-			$msg = "Failed to close connection... Error message:\n" . $con->error;
-			printErrMsg($msg);
-			return;
+			printErrMsg($con->error);
+			return false;
 		}
 		return $count === 1;
 	}
@@ -299,6 +286,7 @@ function validatePassword($email, $emailSalt, $pass, $passSalt)
 
 function printErrMsg($msg)
 {
+	// need change to output client-friendly error page
 	print <<<EOB
 <!DOCTYPE html>
 <html>
@@ -306,6 +294,7 @@ function printErrMsg($msg)
 		<title>Login Test - Error</title>
 	</head>
 	<body>
+		<p>Error:</p>
 		<pre>{$msg}</pre>
 	</body>
 </html>
