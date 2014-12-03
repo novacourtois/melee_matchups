@@ -13,7 +13,7 @@ $passRep = (isset($_POST["repPass"])) ? $_POST["repPass"] : "";
 // get salts
 $emailSalt = "";
 $passSalt = "";
-$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
+$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
 if($con->connect_errno)
 {
 	printErrMsg($con->connect_error);
@@ -158,7 +158,7 @@ function validateEmail($email, $emailSalt)
 		// confirm that email is not in database
 		// should login credentials be saved in a different file?
 		$emailHash = hash("sha512", $emailSalt . $email);
-		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
+		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
 		if($con->connect_errno)
 		{
 			printErrMsg($con->connect_error);
