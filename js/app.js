@@ -19,54 +19,44 @@ angular.module('matchups',['ngRoute'])
 .controller("matchupsCtrl", function($scope, $http) {
     $scope.data = {};
 
-    $scope.data.character = "Fox";
-    $scope.data.opponent = "Falco";
+    $scope.selectedCharacter = "Fox";
+    $scope.selectedOpponent = "Falco";
 
     $scope.characterTips = "hello";
     $scope.opponentTips = "Bye";
 
     $scope.data.characters = ["Fox", "Falco", "Sheik", "Marth"];
 
-    $http.get('accept.php', {
-        params: {
-            character: $scope.data.character,
-            opponent: $scope.data.opponent
-        }
-     })
-     .success(function (data,status) {
-          $scope.info_show = data
-     });
-})
-.controller("projectListCtrl", function($scope, $http) {
-    $scope.data = {};
-
-
-
-    $http.get('http://novacourtois.com/includes/projects.json').
-        success(function(data) {
-            $scope.data = data;
-        });
-})
-.controller("dataListCtrl", function($scope, $http) {
-    $scope.data = {};
-
-    $http.get('http://novacourtois.com/includes/projects.json').
-        success(function(data) {
-            $scope.data.projects = data.items;
-        });
-
-    $http.get('http://novacourtois.com/includes/other.json').
-        success(function(data) {
-            $scope.data.other = data.items;
-        });
-
-    $http.get('http://novacourtois.com/includes/websites.json').
-        success(function(data) {
-            $scope.data.websites = data.items;
-        });
-})
-.filter('unsafe', function($sce) {
-	return function(val) {
-		return $sce.trustAsHtml(val);
+    $scope.characterUpdate = function() {
+        console.log($scope.selectedCharacter);
+        console.log($scope.selectedOpponent);
     };
+
+    $scope.opponentUpdate = function() {
+        console.log($scope.selectedCharacter);
+        console.log($scope.selectedOpponent);
+    };
+
+    $scope.Matchups = function() {
+        $http.get('accept.php', {
+            params: {
+                character: $scope.data.character,
+                opponent: $scope.data.opponent
+            }
+         })
+         .success(function (data,status) {
+              $scope.data.characterTips = data.characterTips;
+              $scope.data.opponentTips = data.opponentTips;
+         });
+    }
+
+    // $http.get('accept.php', {
+    //     params: {
+    //         character: $scope.data.character,
+    //         opponent: $scope.data.opponent
+    //     }
+    //  })
+    //  .success(function (data,status) {
+    //       $scope.info_show = data
+    //  });
 });

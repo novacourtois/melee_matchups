@@ -1,23 +1,31 @@
 <div class="row">
 <div class="col-sm-6">
     <select class="form-control"
-    ng-options="c in data.characters"
-    ng-model="character"
+    ng-options="c for c in data.characters"
+    ng-model="selectedCharacter"
     ng-change="characterUpdate()">
     </select>
 
-    <div class="character fox"></div>
+    <div class="character" ng-class="{
+    'fox'   : selectedCharacter == 'Fox',
+    'falco' : selectedCharacter == 'Falco',
+    'sheik' : selectedCharacter == 'Sheik',
+    'marth' : selectedCharacter == 'Marth'}"></div>
     <div class="info">{{data.characterTips}}</div>
 
 </div>
 
 <div class="col-sm-6">
     <select class="form-control"
-    ng-options="c in data.characters"
-    ng-model="character"
+    ng-options="c for c in data.characters"
+    ng-model="selectedOpponent"
     ng-change="opponentUpdate()">
     </select>
-    <div class="character fox"></div>
+    <div class="character" ng-class="{
+    'fox'   : selectedOpponent == 'Fox',
+    'falco' : selectedOpponent == 'Falco',
+    'sheik' : selectedOpponent == 'Sheik',        
+    'marth' : selectedOpponent == 'Marth'}"></div>
     <div class="info">{{data.opponentTips}}</div>
 </div>
 
