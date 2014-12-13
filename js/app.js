@@ -1,15 +1,13 @@
 angular.module('matchups',['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/work', {
-        templateUrl: '/includes/views/work.html',
-        controller: 'dataListCtrl'
+    $routeProvider.when('/about', {
+        templateUrl: 'views/about.html'
     }).
-    when('/projects', {
-        templateUrl: 'includes/views/projects.html',
-        controller: 'projectListCtrl'
+    when('/contact', {
+        templateUrl: 'views/contact.html'
     }).
     when('/', {
-        templateUrl: 'views/matchups.html',
+        templateUrl: 'views/matchups.html'
         controller: 'matchupsCtrl'
     }).
     otherwise({
