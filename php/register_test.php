@@ -3,8 +3,6 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
-print("<p>in it</p>");
-
 // retrieve user input
 $email = (isset($_POST["email"])) ? $_POST["email"] : "";
 $pass = (isset($_POST["pass"])) ? $_POST["pass"] : "";
