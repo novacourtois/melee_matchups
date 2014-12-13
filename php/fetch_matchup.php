@@ -8,7 +8,7 @@ print("<p>in it</p>");
 $character = "Falco";
 $opponent = "Falco";
 
-$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
+$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
 if($con->connect_errno)
 {
 	printErrMsg($con->connect_error);

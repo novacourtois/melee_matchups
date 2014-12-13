@@ -12,7 +12,7 @@ $pass = (isset($_POST["pass"])) ? $_POST["pass"] : "";
 // get salts
 $emailSalt = "";
 $passSalt = "";
-$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
+$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
 if($con->connect_errno)
 {
 	printErrMsg($con->connect_error);
