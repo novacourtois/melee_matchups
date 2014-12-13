@@ -140,6 +140,7 @@ if($validEmail && $validPass && $validPassRep)
 		return;
 	}
 	print("<p>Successfully added user ($email, $pass) to database...</p>");
+	print("<a href='././views/matchups.html'>Access Matchups!</a>");
 }
 if(!$con->close())
 {
