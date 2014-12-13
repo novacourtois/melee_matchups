@@ -1,5 +1,5 @@
 .fox_thumb {
-	background: url("../img/characters/thumbnail/Fox.png") !important;
+	background: url("../img/characters/thumbnail/fox.png") !important;
 }
 
 
@@ -7,7 +7,7 @@
 	background: url("../img/characters/fox.png") !important;
 	background-repeat: no-repeat !important;
     background-attachment: fixed !important;
-    background-position: center !important; 
+    background-position: center !important;
 }
 
 .falco {
