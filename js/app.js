@@ -7,7 +7,7 @@ angular.module('matchups',['ngRoute'])
         templateUrl: 'views/contact.html'
     }).
     when('/', {
-        templateUrl: 'views/matchups.html'
+        templateUrl: 'views/matchups.html',
         controller: 'matchupsCtrl'
     }).
     otherwise({
