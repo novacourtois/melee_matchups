@@ -9,22 +9,28 @@ angular.module('matchups',['ngRoute'])
         controller: 'projectListCtrl'
     }).
     when('/', {
-        templateUrl: '/views/matchups.html',
+        templateUrl: 'views/matchups.html',
         controller: 'matchupsCtrl'
     }).
     otherwise({
         redirectTo: '/'
     });
 }])
-.controller("projectListCtrl", function($scope, $http) {
+.controller("matchupsCtrl", function($scope, $http) {
     $scope.data = {};
+
+    $scope.data.character = "Fox";
+    $scope.data.opponent = "Falco";
+
+    $scope.characterTips = "hello";
+    $scope.opponentTips = "Bye";
 
     $scope.data.characters = ["Fox", "Falco", "Sheik", "Marth"];
 
     $http.get('accept.php', {
         params: {
-            source: link,
-            category_id: category
+            character: $scope.data.character,
+            opponent: $scope.data.opponent
         }
      })
      .success(function (data,status) {
@@ -33,6 +39,8 @@ angular.module('matchups',['ngRoute'])
 })
 .controller("projectListCtrl", function($scope, $http) {
     $scope.data = {};
+
+
 
     $http.get('http://novacourtois.com/includes/projects.json').
         success(function(data) {
