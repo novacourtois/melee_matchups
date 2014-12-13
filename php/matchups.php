@@ -9,12 +9,10 @@ $opponent = "Falco";
 
 if (!empty($_GET['character'])) {
 	$character = $_GET['character'];
-	print("$character");
 }
 
 if (!empty($_GET['opponent'])) {
 	$opponent = $_GET['opponent'];
-	print("$opponent");
 }
 
 $con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
