@@ -151,7 +151,7 @@ if(!$con->close())
 
 function validateEmail($email, $emailSalt)
 {
-	// confirm that email is valid (there are known bugs but they are conservative in nature, so it's no a big issue at
+	// confirm that email is valid (there are known bugs but they are conservative in nature, so it's no a bit issue at
 	// this time)
 	if(filter_var($email, FILTER_VALIDATE_EMAIL))
 	{

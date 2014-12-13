@@ -130,7 +130,7 @@ function validateEmail($email, $emailSalt)
 		// confirm that email is in database
 		// should login credentials be saved in a different file?
 		$emailHash = hash("sha512", $emailSalt . $email);
-		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
+		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
 		if($con->connect_errno)
 		{
 			printErrMsg($con->connect_error);
@@ -225,7 +225,7 @@ function validatePassword($email, $emailSalt, $pass, $passSalt)
 		// confirm that password matches validated email in database
 		$emailHash = hash("sha512", $emailSalt . $email);
 		$passHash = hash("sha512", $passSalt . $pass);
-		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", /*password*/, "cs329e_jking");
+		$con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
 		if($con->connect_errno)
 		{
 			printErrMsg($con->connect_error);
