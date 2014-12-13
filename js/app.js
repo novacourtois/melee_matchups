@@ -28,15 +28,22 @@ angular.module('matchups',['ngRoute'])
     $scope.data.characters = ["Fox", "Falco", "Sheik", "Marth"];
 
     $scope.matchups = function() {
+        console.log('fetching info');
         $http.get('php/matchups.php', {
             params: {
                 character : $scope.data.character,
                 opponent  : $scope.data.opponent
             }
         })
-        .success(function (data,status) {
+        .success(function (data, status) {
+            console.log('fetching info worked');
+            console.log(data);
+            console.log(status);
             $scope.data.characterTips = data.characterTips;
             $scope.data.opponentTips = data.opponentTips;
+        })
+        .error(function (data, status){
+            console.log('fetching info failed');
         });
     };
 });

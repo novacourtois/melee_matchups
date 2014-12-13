@@ -3,17 +3,18 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
-print("<p>in it</p>");
 
 $character = "Fox";
 $opponent = "Falco";
 
 if (!empty($_GET['character'])) {
 	$character = $_GET['character'];
+	print("$character");
 }
 
 if (!empty($_GET['opponent'])) {
 	$opponent = $_GET['opponent'];
+	print("$opponent");
 }
 
 $con = new mysqli("fall-2014.cs.utexas.edu", "jking", "4zPjLvoHWu", "cs329e_jking");
@@ -65,9 +66,15 @@ if(!$con->close())
 	printErrMsg($con->error);
 	return false;
 }
-$arr = array("character" => $characterName, "opponent" => $opponentName, "percentage" => $winPercentage,
-	"characterTips" => $characterTips, "opponentTips" => $opponentTips);
+$arr = array(
+		"character"     => $characterName,
+		"opponent"      => $opponentName,
+		"percentage"    => $winPercentage,
+		"characterTips" => $characterTips,
+		"opponentTips"  => $opponentTips);
+
 $jsonStr = json_encode($arr);
+echo $jsonStr;
 return $jsonStr;
 
 function printErrMsg($msg)
