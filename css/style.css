@@ -1,0 +1,32 @@
+.fox_thumb {
+	background: url("../img/characters/thumbnail/Fox.png") !important;
+}
+
+
+.fox {
+	background: url("../img/characters/fox.png") !important;
+	background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-position: center !important; 
+}
+
+.falco {
+	background: url("../img/characters/falco.png") !important;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+.sheik {
+	background: url("../img/characters/sheik.png") !important;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+.marth {
+	background: url("../img/characters/marth.png") !important;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
