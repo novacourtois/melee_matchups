@@ -36,9 +36,13 @@ angular.module('matchups',['ngRoute'])
             console.log(status);
             $scope.data.characterTips = data.characterTips;
             $scope.data.opponentTips = data.opponentTips;
+            $scope.data.characterPercentage = data.percentage;
+            $scope.data.opponentPercentage = 100 - data.percentage;
         })
         .error(function (data, status){
             console.log('fetching info failed');
         });
-    };
+    }
+
+    $scope.matchups();
 });
