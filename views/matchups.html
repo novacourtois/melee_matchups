@@ -3,7 +3,7 @@
     <select class="form-control"
     ng-options="c for c in data.characters"
     ng-model="selectedCharacter"
-    ng-change="characterUpdate()">
+    ng-change="matchups()">
     </select>
 
     <div class="character" ng-class="{
@@ -19,7 +19,7 @@
     <select class="form-control"
     ng-options="c for c in data.characters"
     ng-model="selectedOpponent"
-    ng-change="opponentUpdate()">
+    ng-change="matchups()">
     </select>
     <div class="character" ng-class="{
     'fox'   : selectedOpponent == 'Fox',

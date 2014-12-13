@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 print("<p>in it</p>");
 
-$character = "Falco";
+$character = "Fox";
 $opponent = "Falco";
 
 if (!empty($_GET['character'])) {
