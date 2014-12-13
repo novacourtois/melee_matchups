@@ -29,12 +29,7 @@ angular.module('matchups',['ngRoute'])
 
     $scope.matchups = function() {
         console.log('fetching info');
-        $http.get('php/matchups.php', {
-            params: {
-                character : $scope.data.character,
-                opponent  : $scope.data.opponent
-            }
-        })
+        $http.get('php/matchups.php?character='+$scope.data.character+'&opponent='+opponent)
         .success(function (data, status) {
             console.log('fetching info worked');
             console.log(data);
