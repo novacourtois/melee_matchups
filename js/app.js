@@ -21,10 +21,15 @@ angular.module('matchups',['ngRoute'])
 
     $scope.data.characters = ["Fox", "Falco", "Sheik", "Marth"];
 
-    // $http.get('http://novacourtois.com/includes/projects.json').
-    //     success(function(data) {
-    //         $scope.data = data;
-    //     });
+    $http.get('accept.php', {
+        params: {
+            source: link,
+            category_id: category
+        }
+     })
+     .success(function (data,status) {
+          $scope.info_show = data
+     });
 })
 .controller("projectListCtrl", function($scope, $http) {
     $scope.data = {};

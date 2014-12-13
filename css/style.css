@@ -3,6 +3,11 @@
 }
 
 
+.character {
+	width:100%;
+	height:100px;
+}
+
 .fox {
 	background: url("../img/characters/fox.png") !important;
 	background-repeat: no-repeat !important;
