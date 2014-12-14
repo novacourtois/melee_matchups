@@ -26,7 +26,9 @@ $email_subject = "Website Contact Form:  $name";
 $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
 $headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";	
+setcookie("right_before", "send_email", time()+30);
 mail($to,$email_subject,$email_body,$headers);
+setcookie("right_after", "send_email", time()+30);
 sentMessage("./../index.html");
 
 ##########################################################################################
