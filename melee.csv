@@ -1,64 +1,31 @@
-Fox, Fox, 50, A, B
-Fox, Falco, 50, A, B
-Fox, Sheik, 50, A, B
-Fox, Marth, 50, A, B
-Fox, Jigglypuff, 50, A, B
-Fox, Peach, 50, A, B
-Fox, C. Falcon, 50, A, B
-Fox, Ice Climbers, 50, A, B
-Falco, Fox, 50, A, B
-Falco, Falco, 50, A, B
-Falco, Sheik, 50, A, B
-Falco, Marth, 50, A, B
-Falco, Jigglypuff, 50, A, B
-Falco, Peach, 50, A, B
-Falco, C. Falcon, 50, A, B
-Falco, Ice Climbers, 50, A, B
-Sheik, Fox, 50, A, B
-Sheik, Falco, 50, A, B
-Sheik, Sheik, 50, A, B
-Sheik, Marth, 50, A, B
-Sheik, Jigglypuff, 50, A, B
-Sheik, Peach, 50, A, B
-Sheik, C. Falcon, 50, A, B
-Sheik, Ice Climbers, 50, A, B
-Marth, Fox, 50, A, B
-Marth, Falco, 50, A, B
-Marth, Sheik, 50, A, B
-Marth, Marth, 50, A, B
-Marth, Jigglypuff, 50, A, B
-Marth, Peach, 50, A, B
-Marth, C. Falcon, 50, A, B
-Marth, Ice Climbers, 50, A, B
-Jigglypuff, Fox, 50, A, B
-Jigglypuff, Falco, 50, A, B
-Jigglypuff, Sheik, 50, A, B
-Jigglypuff, Marth, 50, A, B
-Jigglypuff, Jigglypuff, 50, A, B
-Jigglypuff, Peach, 50, A, B
-Jigglypuff, C. Falcon, 50, A, B
-Jigglypuff, Ice Climbers, 50, A, B
-Peach, Fox, 50, A, B
-Peach, Falco, 50, A, B
-Peach, Sheik, 50, A, B
-Peach, Marth, 50, A, B
-Peach, Jigglypuff, 50, A, B
-Peach, Peach, 50, A, B
-Peach, C. Falcon, 50, A, B
-Peach, Ice Climbers, 50, A, B
-C. Falcon, Fox, 50, A, B
-C. Falcon, Falco, 50, A, B
-C. Falcon, Sheik, 50, A, B
-C. Falcon, Marth, 50, A, B
-C. Falcon, Jigglypuff, 50, A, B
-C. Falcon, Peach, 50, A, B
-C. Falcon, C. Falcon, 50, A, B
-C. Falcon, Ice Climbers, 50, A, B
-Ice Climbers, Fox, 50, A, B
-Ice Climbers, Falco, 50, A, B
-Ice Climbers, Sheik, 50, A, B
-Ice Climbers, Marth, 50, A, B
-Ice Climbers, Jigglypuff, 50, A, B
-Ice Climbers, Peach, 50, A, B
-Ice Climbers, C. Falcon, 50, A, B
-Ice Climbers, Ice Climbers, 50, A, B
+"Fox",	"Fox",	"50",	"Mirror Match. Fox can beat up on Fox pretty nicely. Uthrow chain grabs followed by Utilt or Usmash are great in this match-up. Remember, that means you have to watch out for these too. Stages don't matter, so just go to where you are comfortable.",	"Mirror Match. Fox can beat up on Fox pretty nicely. Up-throw chain grabs followed by Utilt or Usmash are great in this match-up. Remember, that means you have to watch out for these too. Stages don't matter, so just go to where you are comfortable."
+
+"Fox",	"Falco",	"50",	"Falco laser pressure is really annoying. Get good at running powershields into grabs. You can Uthrow chain-grab a couple of times into Usmash. If Falco is shield pressuring you, do a shine or Usmash OoS. Falco is really easy to shine-spike if they are nearby and Firefoxing to the stage.",	"Laser Pressure can really lock down any approach Fox has. You can just laser Fox when he is recovering to get him below the stage, making him Firefox upwards. A well-timed Dair will end that stock. Of course, pillars are great. Falco has so many auto-combos. Dair Fsmash on platforms are great. You'll want to keep distance while putting on laser pressure. For this reason, try to avoid Yoshi's Story."
+
+"Fox",	"Marth",	"55",	"A lot of Fox players have problems with this match-up. Don't get grabbed, specially at lower percentages. You can get chain-grabbed to high percentages, or even death if your opponent follows up correctly. Marth can't really defend himself if you are below him, so always go out there with an Uair. If Marth is recovering, remember the Marth Killer - Light-shielding on the edge. If you're recovering, be weary of counters, and use air-dodges in order to avoid being Spiked. Marth's worst stage in this match-up is Dreamland, because he can't connect with tippers if you are on platforms easily compared to other stages. Final Destination allows Marth to chain-grab Fox more easily, so try to avoid that unless you're comfortable there.",	"Marth can chain-grab Fox to death, and destroy him if Fox is above or on a platform. Learn to platform tech-chase well. Counters are great if fox is riding up the side to recover (on Yoshi's or Dreamland). Don't get too close before Dolphin Slashing on stage while recovering because Fox can go shine you and that's your stock."
+
+"Fox",	"Sheik",	"55",	"Mix up your techs otherwise you will get tech-chased to death. Sheik will probably ban FD against you, so just go to Stadium. Avoid FoD, as Sheik's tilts are great with the variable platforms. When Sheik is recovering, hold the ledge. They'll try to land on the platform. Then, either Bair or Uair to knock them off stage. Rinse and repeat.",	"Have your tech-chasing on point. A good Fair after a tech-chase can land Fox off stage. You can jump needle fox to get him lower than he can recover from, or hold the edge and Bair as he comes to you. You'll most likely win the trade if the Firefox hits you."
+
+"Falco",	"Fox",	"50",	"Laser Pressure can really lock down any approach Fox has. You can just laser Fox when he is recovering to get him below the stage, making him Firefox upwards. A well-timed Dair will end that stock. Of course, pillars are great. Falco has so many auto-combos. Dair Fsmash on platforms are great. You'll want to keep distance while putting on laser pressure. For this reason, try to avoid Yoshi's Story.",	"Falco laser pressure is really annoying. Get good at running powershields into grabs. You can Uthrow chain-grab a couple of times into Usmash. If Falco is shield pressuring you, do a shine or Usmash OoS. Falco is really easy to shine-spike if they are nearby and Firefoxing to the stage."
+
+"Falco",	"Falco",	"50",	"Mirror Match. Falco auto-combos Falco pretty badly. Who ever has better spacing and pressure will win.",	"Mirror Match. Falco auto-combos Falco pretty badly. Who ever has better spacing and pressure will win."
+
+"Falco",	"Marth",	"50",	"Being Falco, you can lock down Marth with lasers. But your spacing has to be on point. Marth's range is larger than anyone else's so you have to stay back more. Otherwise, powershield or counter followed up by a grab can be the end of you. Marth is pretty stuck if he is above you, so don't be afraid to up there and challenge with a Uair.", 	"A bunch of people think Marth wins this. Yoshi's is in your favor, as you can easily get tippers on Falco and kill at low percent. FD also favors Marth. You can chain-grab to death. Counters and Dtilts are great options for edge guarding. Don't be afraid to grab the ledge. Falco never makes it back."
+
+"Falco",	"Sheik",	"55",	"If you can lock down Sheik with lasers, you'll be set. You can catch them blocking and follow up with a grab, or shield poke with Dtilt. Knock Sheik off stage and bair when she lands on the platforms. Free damage leads to free stocks.",	"Falco wins this match, but Sheik can easily gimp Falco. Bthrow off stage followed by Bair or needles ends Falco's stock at any percent. Always have your needles charge and ready to use them. It's very easy to exploit Falco's short recovery range, even if you trade hits. Avoid FD and go to FoD. If you're being laser camped, just move around the platforms and charge your needles, or grab the edge. If you're up, Falco will have to approach you, which isn't something good near the ledge."
+
+"Marth",	"Fox",	"50",	"Marth can chain-grab Fox to death, and destroy him if Fox is above or on a platform. Learn to platform tech-chase well. Counters are great if fox is riding up the side to recover (on Yoshi's or Dreamland). Don't get too close before Dolphin Slashing on stage while recovering because Fox can go shine you and that's your stock."	"A lot of Fox players have problems with this match-up. Don't get grabbed, specially at lower percentages. You can get chain-grabbed to high percentages, or even death if your opponent follows up correctly. Marth can't really defend himself if you are below him, so always go out there with an Uair. If Marth is recovering, remember the Marth Killer - Light-shielding on the edge. If you're recovering, be weary of counters, and use air-dodges in order to avoid being Spiked. Marth's worst stage in this match-up is Dreamland, because he can't connect with tippers if you are on platforms easily compared to other stages. Final Destination allows Marth to chain-grab Fox more easily, so try to avoid that unless you're comfortable there."
+
+"Marth",	"Falco",	"50",	"A bunch of people think Marth wins this. Yoshi's is in your favor, as you can easily get tippers on Falco and kill at low percent. FD also favors Marth. You can chain-grab to death. Counters and Dtilts are great options for edge guarding. Don't be afraid to grab the ledge. Falco never makes it back."	"Being Falco, you can lock down Marth with lasers. But your spacing has to be on point. Marth's range is larger than anyone else's so you have to stay back more. Otherwise, powershield or counter followed up by a grab can be the end of you. Marth is pretty stuck if he is above you, so don't be afraid to up there and challenge with a Uair."
+
+"Marth",	"Marth",	"50",	"Mirror Match. Some joke that whoever plays this match the worst will win. What this means is that another Marth main will not fall for your typical Marth tricks. Instead, do something the aren't expectng. Marth can chain-throw Marth al low percent, followed by a Fsmash or Uthrow + Utilt. Recovering is always tricky against Marth, so be ready to tech if they Fsmash or Dtilt you.",	"Mirror Match. Some joke that whoever plays this match the worst will win. What this means is that another Marth main will not fall for your typical Marth tricks. Instead, do something the aren't expectng. Marth can chain-throw Marth al low percent, followed by a Fsmash or Uthrow + Utilt. Recovering is always tricky against Marth, so be ready to tech if they Fsmash or Dtilt you."
+
+"Marth",	"Sheik",	"50",	"Marth can combo Sheik from below well with shffl Uair and Utilt. Uthrow is your best bet to start out combos, and then follow through. Yoshi's and FD are your best bet. Abuse Sheik's laggy Up-B recovery with Fsmash.",	"Sheik can chain-grab Marth pretty easily. If Marth is above you, just go up with Uairs or charge needles. The needles will come in handy for when Marth is recovering. Bairs are good to use because Marth has range on you. Marth can combo you pretty hard if you are above him, so try to avoid that. Camp the ledge if necessary, but don't SD doing so. Avoid FD."
+
+"Sheik",	"Fox",	"45",	"Have your tech-chasing on point. A good Fair after a tech-chase can land Fox off stage. You can jump needle fox to get him lower than he can recover from, or hold the edge and Bair as he comes to you. You'll most likely win the trade if the Firefox hits you.",	"Mix up your techs otherwise you will get tech-chased to death. Sheik will probably ban FD against you, so just go to Stadium. Avoid FoD, as Sheik's tilts are great with the variable platforms. When Sheik is recovering, hold the ledge. They'll try to land on the platform. Then, either Bair or Uair to knock them off stage. Rinse and repeat."
+
+"Sheik",	"Falco",	"45",	"Falco wins this match, but Sheik can easily gimp Falco. Bthrow off stage followed by Bair or needles ends Falco's stock at any percent. Always have your needles charge and ready to use them. It's very easy to exploit Falco's short recovery range, even if you trade hits. Avoid FD and go to FoD. If you're being laser camped, just move around the platforms and charge your needles, or grab the edge. If you're up, Falco will have to approach you, which isn't something good near the ledge.", 	"If you can lock down Sheik with lasers, you'll be set. You can catch them blocking and follow up with a grab, or shield poke with Dtilt. Knock Sheik off stage and bair when she lands on the platforms. Free damage leads to free stocks."
+
+"Sheik",	"Marth",	"55",	"Sheik can chain-grab Marth pretty easily. If Marth is above you, just go up with Uairs or charge needles. The needles will come in handy for when Marth is recovering. Bairs are good to use because Marth has range on you. Marth can combo you pretty hard if you are above him, so try to avoid that. Camp the ledge if necessary, but don't SD doing so. Avoid FD.",	"Marth can combo Sheik from below well with shffl Uair and Utilt. Uthrow is your best bet to start out combos, and then follow through. Yoshi's and FD are your best bet. Abuse Sheik's laggy Up-B recovery with Fsmash."
+
+"Sheik",	"Sheik",	"50",	"Mirror Match. Chain-grab and you'll win the match. When Sheik is recovering, hold the ledge. They'll try to land on the platform. Then, try to get the reverse hitbox on your Fair to knock them off stage. Rinse and repeat.",	"Mirror Match. Chain-grab and you'll win the match. When Sheik is recovering, hold the ledge. They'll try to land on the platform. Then, try to get the reverse hitbox on your Fair to knock them off stage. Rinse and repeat."
