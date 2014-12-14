@@ -12,7 +12,17 @@ if(empty($_POST['name'])  	||
 $name = $_POST['name'];
 $email_address = $_POST['email'];
 $message = $_POST['message'];
-	
+
+print <<<WORKING
+	<html>
+	<body>
+	name = $name <br>
+	email = $email_address <br>
+	message = $message
+	</body>
+	</html>
+WORKING;
+
 // Create the email and send the message
 $to = $email_address; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Website Contact Form:  $name";
