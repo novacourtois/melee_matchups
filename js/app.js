@@ -14,26 +14,29 @@ angular.module('matchups',['ngRoute', 'ngCookies'])
         redirectTo: '/'
     });
 }])
-.controller('matchupsCtrl',['$cookies', function($scope, $http, $cookies) {
+.controller('matchupsCtrl', function($scope, $http, $cookieStore) {
     $scope.data = {};
 
     $scope.selectedCharacter = "Fox";
     $scope.selectedOpponent  = "Falco";
 
-    if($cookies.selectedCharacter) {
+    var tmp_character = $cookieStore.get('selectedCharacter');
+    var tmp_opponent  = $cookieStore.get('selectedCharacter');
+
+    if(tmp_character) {
         console.log('character set');
-        $scope.selectedCharacter = $cookies.selectedCharacter;
+        $scope.selectedCharacter = tmp_character;
     }
-    if($cookies.selectedOpponent) {
+    if(tmp_oppononent) {
         console.log('opponent set');
-        $scope.selectedOpponent = $cookies.selectedOpponent;
+        $scope.selectedOpponent = tmp_oppononent;
     }
 
     $scope.data.characters = ["Fox", "Falco", "Sheik", "Marth"];
 
     $scope.matchups = function() {
-        $cookies.selectedCharacter = $scope.selectedCharacter;
-        $cookies.selectedOpponent  = $scope.selectedOpponent;
+        $cookieStore.put('selectedCharacter', $scope.selectedCharacter);
+        $cookieStore.put('selectedOpponent',  $scope.selectedOpponent);
 
         console.log('fetching info');
         $http.get('php/matchups.php?character='+$scope.selectedCharacter+'&opponent='+$scope.selectedOpponent)
@@ -52,4 +55,4 @@ angular.module('matchups',['ngRoute', 'ngCookies'])
     }
 
     $scope.matchups();
-}]);
+});
