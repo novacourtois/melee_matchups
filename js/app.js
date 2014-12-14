@@ -20,17 +20,17 @@ angular.module('matchups',['ngRoute', 'ngCookies'])
     $scope.selectedCharacter = "Fox";
     $scope.selectedOpponent  = "Falco";
 
-    var tmp_character = $cookieStore.get('selectedCharacter');
-    var tmp_opponent  = $cookieStore.get('selectedCharacter');
+    // var tmp_character = $cookieStore.get('selectedCharacter');
+    // var tmp_opponent  = $cookieStore.get('selectedCharacter');
 
-    if(tmp_character) {
-        console.log('character set');
-        $scope.selectedCharacter = tmp_character;
-    }
-    if(tmp_oppononent) {
-        console.log('opponent set');
-        $scope.selectedOpponent = tmp_oppononent;
-    }
+    // if(tmp_character) {
+    //     console.log('character set');
+    //     $scope.selectedCharacter = tmp_character;
+    // }
+    // if(tmp_oppononent) {
+    //     console.log('opponent set');
+    //     $scope.selectedOpponent = tmp_oppononent;
+    // }
 
     $scope.data.characters = ["Fox", "Falco", "Sheik", "Marth"];
 
@@ -54,5 +54,5 @@ angular.module('matchups',['ngRoute', 'ngCookies'])
         });
     }
 
-    $scope.matchups();
+    // $scope.matchups();
 });
