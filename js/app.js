@@ -1,4 +1,4 @@
-angular.module('matchups',['ngRoute'])
+angular.module('matchups',['ngRoute', 'ngCookies'])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/about', {
         templateUrl: 'views/about.html'
@@ -14,18 +14,27 @@ angular.module('matchups',['ngRoute'])
         redirectTo: '/'
     });
 }])
-.controller("matchupsCtrl", function($scope, $http) {
+.controller('matchupsCtrl',['$cookies', function($scope, $http, $cookies) {
     $scope.data = {};
 
     $scope.selectedCharacter = "Fox";
-    $scope.selectedOpponent = "Falco";
+    $scope.selectedOpponent  = "Falco";
 
-    $scope.characterTips = "";
-    $scope.opponentTips = "";
+    if($cookies.selectedCharacter) {
+        console.log('character set');
+        $scope.selectedCharacter = $cookies.selectedCharacter;
+    }
+    if($cookies.selectedOpponent) {
+        console.log('opponent set');
+        $scope.selectedOpponent = $cookies.selectedOpponent;
+    }
 
     $scope.data.characters = ["Fox", "Falco", "Sheik", "Marth"];
 
     $scope.matchups = function() {
+        $cookies.selectedCharacter = $scope.selectedCharacter;
+        $cookies.selectedOpponent  = $scope.selectedOpponent;
+
         console.log('fetching info');
         $http.get('php/matchups.php?character='+$scope.selectedCharacter+'&opponent='+$scope.selectedOpponent)
         .success(function (data, status) {
@@ -43,4 +52,4 @@ angular.module('matchups',['ngRoute'])
     }
 
     $scope.matchups();
-});
+}]);
