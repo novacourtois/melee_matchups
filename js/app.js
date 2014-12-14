@@ -18,12 +18,14 @@ angular.module('matchups',['ngRoute', 'ngCookies'])
     $scope.data = {};
 
     $scope.selectedCharacter = "Fox";
-    $scope.selectedOpponent = "Falco";
+    $scope.selectedOpponent  = "Falco";
 
     if($cookies.selectedCharacter) {
+        console.log('character set');
         $scope.selectedCharacter = $cookies.selectedCharacter;
     }
     if($cookies.selectedOpponent) {
+        console.log('opponent set');
         $scope.selectedOpponent = $cookies.selectedOpponent;
     }
 
